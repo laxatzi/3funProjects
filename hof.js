@@ -1,17 +1,17 @@
 {
-   // functions should not only be abstract but also non-altering regarding the underlying data they deal with.
+'use strict';
 
 const reverseStr = function(str){
-   var arrFromStr = str.split("");
-   arrFromStr.reverse();
-   return arrFromStr.join("");
+   var splittedStr = str.split("");
+    splittedStr.reverse();
+   return splittedStr.join("");
 }
 
-const reverseNames = reverseStr;
+const reverseCityNames = reverseStr;
 
-// the above function does NOT change the value of the provided as an argument string
-var string = "Thessaloniki";
-console.log(reverseStr(string)); // "ikinolassehT"
-console.log(string); // "Thessaloniki"
-console.log(reverseNames('Maria')); // "airaM"
+var cityName = "Thessaloniki";
+console.log(reverseStr(cityName)); // "ikinolassehT"
+console.log(cityName); // "Thessaloniki"
+console.log(reverseCityNames("Athens")); // "snehtA"
+
 }
