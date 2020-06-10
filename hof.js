@@ -2,14 +2,14 @@
 'use strict';
 
 const reverseStr = function(str){
-   var splittedStr = str.split("");
+   let splittedStr = str.split("");
     splittedStr.reverse();
    return splittedStr.join("");
 }
 
 const reverseCityNames = reverseStr;
 
-var cityName = "Thessaloniki";
+let cityName = "Thessaloniki";
 console.log(reverseStr(cityName)); // "ikinolassehT"
 console.log(reverseCityNames("Athens")); // "snehtA"
 
@@ -18,26 +18,33 @@ console.log(reverseCityNames("Athens")); // "snehtA"
 
 {
 'use strict';
-   let numbers = [3,4,12,4];
+   const numbers = [3,4,12,4];
    // getting sum of numbers with the reduce method
-   let sumOfNumbers = numbers.reduce(function(accumulator , currentValue){
-      return accumulator + currentValue;
-   }, 10); 
+   const sumOfNumbers = function(arr){
+      arr.reduce((acc, current)=> acc + current,10)
+   }
 
-   console.log(sumOfNumbers); //33
+   console.log(sumOfNumbers(numbers)); //33
 }// end block
 
 
 
 {
    'use strict';
-   let numbers = [3,4,12,4];
+   const numbers = [3,4,12,4];
    let sumOfNumbers = 10;
-   for(let i = 0; i<numbers.length; i++){
-      sumOfNumbers += numbers[i];
+
+   const sumOfArr = function(arr){
+      for(let i = 0; i<arr.length; i++){
+         sumOfNumbers += arr[i];
+      }
+      return sumOfNumbers;
    }
-   console.log(sumOfNumbers); // 33
+console.log(sumOfArr(numbers)); // 33
+
 }// end block
+
+
 
 {
    let pets = [
@@ -49,31 +56,21 @@ console.log(reverseCityNames("Athens")); // "snehtA"
       {type:'Cat', name:'Mat', age:4},
    ];
 
-   // check if it is dog or cats
+// Filter dog objects
 
-      const isDog = (el)=> el.type === 'Dog';
-      const isCat = (el)=> el.type === 'Cat';
-   // test
-      console.log(isDog(pets[1]));
-
- const getDogs = function(arr){
-     return arr.filter(isDog)
+  const getDogs = function(arr){
+     return arr.filter((el)=> el.type === 'Dog');
        };
-   console.log(getDogs(pets));
-   const getCats = function(pets){ 
-     return pets.filter(isCat);
-    };
 
- const dogAvg = function(arr) {
-     return arr.reduce((acc, currentV)=> (acc + currentV.age ) / arr.length , 0);
+  //const dogArray = getDogs(pets);
+
+// Find average age of dogs
+ const ageAvg = function(arr) {
+     return arr.reduce((acc, currentV)=> (acc + currentV.age ),0) / arr.length;
    };
 
- const catAvg = function(arr){
-      return arr.reduce((acc, currentV)=> acc + currentV.age / arr.length, 0 );
-   };
- const dogAvgAge = dogAvg(pets);
- const catAvgAge = catAvg(pets)
+ const dogAvgAge = ageAvg(getDogs(pets));
   
-   console.log(catAvgAge);
+   console.log(`My dogs' average age is ${dogAvgAge.toFixed(2)}`);
 
  }//block
