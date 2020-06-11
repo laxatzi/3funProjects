@@ -40,7 +40,10 @@ console.log(reverseCityNames("Athens")); // "snehtA"
       }
       return sumOfNumbers;
    }
-console.log(sumOfArr(numbers)); // 33
+console.log(sumOfNumbers); // 10 -- The initial value
+sumOfArr(numbers); // Invoce the function
+console.log(sumOfNumbers); // 33 -- Calling the function has side effects sumOfNumbers value in the global scope
+
 
 }// end block
 
@@ -57,18 +60,16 @@ console.log(sumOfArr(numbers)); // 33
    ];
 
 // Filter dog objects
-
-  const getDogs = function(arr){
+ const getDogs = function(arr){
      return arr.filter((el)=> el.type === 'Dog');
        };
 
-  //const dogArray = getDogs(pets);
-
-// Find average age of dogs
+// Find average age
  const ageAvg = function(arr) {
      return arr.reduce((acc, currentV)=> (acc + currentV.age ),0) / arr.length;
    };
 
+// Find average age of dogs particularly 
  const dogAvgAge = ageAvg(getDogs(pets));
   
    console.log(`My dogs' average age is ${dogAvgAge.toFixed(2)}`);
