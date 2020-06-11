@@ -59,7 +59,9 @@
         // This function is unpredictable and to know what value will return after invocation we need to know both the argument(s) we pass AND the time of invocation.
 
         //? This is one of the major disadvantages of impure functions. 
+        //. The advantage of pure functions, on the other hand, is that their outcome is determined solely by their inputs. The return value it generates for a given input never changes.
 
-        
+        //? The fact that pure functions are predictable means they are easy to test.
+        //. A very simple test example...
        
 
