@@ -14,7 +14,8 @@
 }
 
     function printPersonStreet(person){
-        console.log(person?.address?.street);
+        //optional chaining
+        console.log(person.address?.street);
     }
 
     const lambros = new Person("Lambros", "Hatzini",undefined
@@ -26,5 +27,19 @@
 
 }//end block
 
-/* 
-    */
+
+
+{
+    const name = "Lambros";
+    const favFood = "Papoytsakia";
+    const favMusic = "Rock";
+    const lambros = {
+        name,
+        favFood,
+        favMusic,
+    }
+
+    console.log(lambros.name);
+    console.log(lambros.favFood);
+    console.log(lambros.favMusic);
+}
