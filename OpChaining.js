@@ -18,8 +18,7 @@
         console.log(person.address?.street);
     }
 
-    const lambros = new Person("Lambros", "Hatzini",undefined
-        );
+    const lambros = new Person("Lambros", "Hatzini",undefined);
 
         lambros.print();
         printPersonStreet(lambros);
