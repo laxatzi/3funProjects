@@ -1,21 +1,21 @@
 class Person{
-    constructor(firstName, lastName, address){
-        this.firstName = firstName;
+    constructor(name, lastName, address){
+        this.name = name;
         this.lastName = lastName;
         this.address = address;
     }
 
+
 }
 
+const lambros = new Person("Lambros", "Hatzini",{
+    city: "Retziki",
+    street:null,
+} );
 
-function personStreet(person) {
-    console.log(person?.address?.street?.streetName);
+function personalDetails(person){
+    return (person?.address?.street?.street.streetName);
 }
 
-const lambros = new Person('Lambros', 'Hatzini',{
-    street: undefined,
-    city: 'Retziki',
-});
-
-personStreet(lambros);
+console.log(personalDetails(lambros));
 
