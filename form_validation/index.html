@@ -10,5 +10,31 @@
 </head>
 <body>
     <h1>Traversy JS projects</h1>
+    <div class="container">
+        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <h2>Resister with us</h2>
+            <div class="form-control">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username">
+                <small class="err">Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+                <small class="err">Error message</small>
+            </div>
+             <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+                <small class="err">Error message</small>
+            </div>
+             <div class="form-control">
+                <label for="rep_password">Repeat Password</label>
+                <input type="password" id="rep_password" name="rep_password" placeholder="Repeat password">
+                <small class="err">Error message</small>
+            </div>
+            <input type="submit" name="submit" value="Submit">
+        </form>
+    </div>
 </body>
 </html>
