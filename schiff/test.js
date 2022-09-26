@@ -1,1 +1,1 @@
-console.log('Ready to code!');
+console.log('Ready to code again!');
