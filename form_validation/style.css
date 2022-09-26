@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --success-color: rgb(36, 109, 36);
+    --error-color: rgb(213, 18, 57);
+}
+body {
+    background-color: #eaeef2;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, .1);
+    width: 15%;
+    min-width: 300px;
+}
+
+h2 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 32px;
+}
+
+form {
+    padding: 30px 10px;
+
+}
+
+.form-control {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.form-control label {
+    display: block;
+    color: rgb(76, 76, 76);
+    margin-bottom: 5px;
+}
+
+.form-control input {
+    border: 2px solid black;
+    border-radius: 5px;
+    display: block;
+    padding: 5px 10px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.form-control .err {
+    color: var(--error-color);
+    display: block;
+    visibility: hidden;
+}
+
+
+.submit {
+    background-color: rgb(36, 109, 36);
+    color: white;
+    padding: 10px;
+    border: 1px solid rgb(36, 109, 36);
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: block;
+    width: 100%;
+}
+
+.form-control input:focus {
+    border-color: rgb(76, 76, 76);
+    outline: 0;
+}
+
+.form-control.error input {
+    border-color: var(--error-color);
+}
+
+.form-control.success input {
+    border-color: var(--success-color);
+}
+
+
+.form-control.error .err {
+    visibility: visible;
+}
